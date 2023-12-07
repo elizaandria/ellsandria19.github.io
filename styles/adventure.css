@@ -5,7 +5,7 @@
     --primary-color-dark: black;
     --text-dark: #1B4D3E;
     --text-light: #4B6F44;
-    --exrta-light: aliceblue;
+    --extra-light: aliceblue;
     --white: #ffffff;
     --max-width: 1200px;
 }
@@ -103,11 +103,11 @@ nav{
     font-size: 3.5rem;
     line-height: 4rem;
     font-weight: 600;
-    color: var(--exrta-light);
+    color: var(--extra-light);
 }
 
 .header_content p{
-    color: var(--exrta-light);
+    color: var(--extra-light);
 }
 
 .adventure_container{
@@ -160,7 +160,7 @@ nav{
 }
 
 .footer{
-    background-color: var(--exrta-light);
+    background-color: var(--extra-light);
 }
 
 .footer_container{
