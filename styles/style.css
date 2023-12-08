@@ -91,6 +91,7 @@ nav{
 .header_content{
     max-width: 600px;
     padding: 5rem 2rem;
+    background-image: url('/images/background.jpeg');
 }
 
 .header_content h1{
