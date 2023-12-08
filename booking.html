@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
         <link rel="stylesheet" href="/styles/booking.css">
+        <script src="//unpkg.com/alpinejs" defer></script>
         <link rel="manifest" href="favicon_io/site.webmanifest">
         <title>Forest Hotel | Resort</title> 
     </head>
@@ -28,43 +29,40 @@
             </div>
         </header>
 
-        <div class="container">
-            <h1>Hotel Booking Form</h1>
-            <form id="booking-form">
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="check-in">Check-in Date:</label>
-                    <input type="date" id="check-in" name="check-in" required>
-                </div>
-                <div class="form-group">
-                    <label for="check-out">Check-out Date:</label>
-                    <input type="date" id="check-out" name="check-out" required>
-                </div>
-                <div class="form-group">
-                    <label for="room-type">Room Type:</label>
-                    <select id="room-type" name="room-type" required>
-                        <option value="standard">Standard</option>
-                        <option value="deluxe">Deluxe</option>
-                        <option value="suite">Suite</option>
+        <main x-data="customer">
+            <form x-on:submit.prevent="$store.user.updateUser">
+                <div>
+                    <select x-model="$store.customer.details.title">
+                        <option value="Mr.">Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Miss.">Miss.</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="comments">Additional Comments:</label>
-                    <textarea id="comments" name="comments" rows="4"></textarea>
+                <br>
+                <div>
+                    <label>Name:</label>
+                    <input type="text" x-model="$store.customer.details.name">
                 </div>
-                <div class="form-group">
-                    <button type="submit">Submit Booking</button>
+                <div>
+                    <label>Email:</label>
+                    <input type="text" x-model="$store.customer.details.email">
                 </div>
+
+
+
+
+
+
+
+
+
+
+
             </form>
-        </div>
-    
+        </main>
+        
+    </body>
+
         <footer class="footer">
             <div class="section_container footer_container">
                 <div class="footer_col">
