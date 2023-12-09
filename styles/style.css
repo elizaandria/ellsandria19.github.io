@@ -81,7 +81,7 @@ nav{
 .header_image_container{
     position: relative;
     min-height: 500px;
-    background-image: url("background.jpeg");
+    background-image: url("/images/background.jpeg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
