@@ -104,7 +104,46 @@
                     <input type="text" x-model="$store.customer.details.email">
                 </div>
 
-
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Room Cost</td>
+                            <td>
+                                LKR <span x-text="booking.room_cost * booking.number_of_rooms"></span>.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Adventure Cost</td>
+                            <td>
+                                LKR <span x-text="total_adventure_cost"></span>.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Cost</td>
+                            <td>
+                                LKR <span x-text="total_cost"></span>.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Discount</td>
+                            <td>
+                                LKR <span x-text="booking.total_discount"></span>.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Final Total</td>
+                            <td>
+                                LKR <span x-text="booking.final_total"></span>.00
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
 
