@@ -6,6 +6,9 @@ document.addEventListener('alpine:init', () =>{
             email: '',
             check_in: '',
             check_out: '',
+            number_of_rooms: '',
+            rooms: '',
+
 
         }
     })

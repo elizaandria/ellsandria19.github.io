@@ -66,21 +66,33 @@
                 <br>
 
                 <div>
-                    <label>Single room:</label>
-                    <input type="text" x-model="$store.customer.details.email">
+                    <label>Number of rooms</label>
+                    <input type="number" x-model="$store.customer.details.number_of_rooms: '',
+                    ">
                 </div>
-                <div>
-                    <label>Double room:</label>
-                    <input type="text" x-model="$store.customer.details.email">
-                </div>
-                <div>
-                    <label>Triple room:</label>
-                    <input type="text" x-model="$store.customer.details.email">
-                </div>
+                <br>
+
                 <div>
                     <label>Email:</label>
                     <input type="text" x-model="$store.customer.details.email">
                 </div>
+                <br>
+
+                <div>
+                    <select x-model="$store.customer.details.rooms">
+                        <option value="single">Single Room</option>
+                        <option value="double">Double Room</option>
+                        <option value="triple">Triple Room</option>
+                    </select>
+                </div>
+                <br>
+
+                <div>
+                    <label>Email:</label>
+                    <input type="text" x-model="$store.customer.details.email">
+                </div>
+                <br>
+
                 <div>
                     <label>Email:</label>
                     <input type="text" x-model="$store.customer.details.email">
