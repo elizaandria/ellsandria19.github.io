@@ -1,15 +1,19 @@
 document.addEventListener('alpine:init', () =>{
     Alpine.store('customer', {
-        details:{
+        details: {
             title: '',
             name: '',
             email: '',
             check_in: '',
             check_out: '',
-            number_of_rooms: '',
+        },
+
+        reservations: {
             rooms: '',
-
-
+            number_of_rooms: '',
+            number_of_adults: '',
+            number_of_children:'',
+            extra_bed: '',
         }
     })
 })
