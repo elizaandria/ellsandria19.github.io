@@ -12,6 +12,8 @@ document.addEventListener('alpine:init', () =>{
 
         loyalty_points: 0,
 
+        tab: 1,
+
         booking:{
             check_in: null,
             check_out: null,
