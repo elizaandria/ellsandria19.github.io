@@ -21,6 +21,33 @@ document.addEventListener('alpine:init', () =>{
             NumberOfSingleRooms: '',
             NumberOfDoubleRooms: '',
             NumberOfTripleRooms: '',
+        },
+
+
+
+
+
+        updateCustomer() {
+            localStorage.setItem(
+                'customerDetails',
+                JSON.stringify(this.$store.customer.details)
+            );
+            localStorage.setItem(
+                'customerReservations',
+                JSON.stringify(this.$store.customer.reservations)
+            );
+            localStorage.setItem(
+                'customerCost',
+                JSON.stringify(this.$store.customer.cost)
+            );
+
+
+
+
+
+
+
+
         }
     });
 })
