@@ -6,21 +6,6 @@ document.addEventListener('alpine:init', () =>{
             email: '',
         },
 
-        reservations: {
-            rooms: '',
-            number_of_rooms: '',
-            number_of_adults: '',
-            number_of_children:'',
-            extra_bed: '',
-        },
-
-        cost: {
-            singleRoom: '',
-            NumberOfSingleRooms: '',
-            NumberOfDoubleRooms: '',
-            NumberOfTripleRooms: '',
-        },
-
         showcontent: false,
         coupons:[
             'Promo123',
@@ -43,6 +28,12 @@ document.addEventListener('alpine:init', () =>{
             promo_code: null,
         },
 
+
+
+
+
+
+        
 
 
         updateCustomer() {
