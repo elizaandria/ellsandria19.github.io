@@ -23,14 +23,20 @@
         <header class="section_container header_container">
             <div class="header_image_container">
                 <div class="header_content">
-                    <h1>Best Vacation Spot</h1>
+                    <h1>Bookings</h1>
                     <p>Enjoy and Relax for as Long as you Like</p>
                 </div>
             </div>
         </header>
 
+<!-- Customer Details -->
         <main x-data="customer">
             <form x-on:submit.prevent="$store.user.updateUser">
+
+                <h1>BOOKING</h1>
+
+                <h5>Customer Details</h5>
+
                 <div>
                     <select x-model="$store.customer.details.title">
                         <option value="Mr.">Mr.</option>
@@ -42,18 +48,74 @@
 
                 <div>
                     <label>Name:</label>
-                    <input type="text" x-model="$store.customer.details.name">
+                    <input type="text" x-model="$store.customer.booking.details.name">
                 </div>
                 <br>
 
                 <div>
                     <label>Email:</label>
-                    <input type="text" x-model="$store.customer.details.email">
+                    <input type="text" x-model="$store.customer.booking.details.email">
                 </div>
-                <br>  
+                <br> 
+
+                <div>
+                    <label>Phone:</label>
+                    <input type="number" x-model="$store.customer.booking.details.phone">
+                </div>
+                <br> 
+
+                <div>
+                    <label>Country:</label>
+                    <input type="text" x-model="$store.customer.booking.details.country">
+                </div>
+                <br> 
+
+                <div>
+                    <label>Postal Code:</label>
+                    <input type="text" x-model="$store.customer.booking.details.postal_code">
+                </div>
+                <br> 
+                <hr> 
 
 
-<!-- Number of rooms -->
+<!-- Adventures -->
+                <h5>Adventures</h5>
+
+                <div>
+                    <label>Number of Adults (Local):</label>
+                    <input type="text" x-model="$store.customer.booking.adventure.number_of_adults_local">
+                </div>
+
+                <div>
+                    <label>Number of Children(Local):<label>
+                    <input type="text" x-model="$store.customer.booking.adventure.number_of_children_local">
+                </div>
+
+                <div>
+                    <label>Number of Adults (Foreign):</label>
+                    <input type="text" x-model="$store.customer.booking.adventure.number_of_adults_foreign">
+                </div>
+
+                <div>
+                    <label>Number of Children(Foreign):<label>
+                    <input type="text" x-model="$store.customer.booking.adventure.number_of_children_foreign">
+                </div>
+
+                <div>
+                    <label>Adult Guide:<label>
+                    <input type="text" x-model="$store.customer.booking.adventure.adult_guide">
+                </div>
+
+                <div>
+                    <label>Child Guide:<label>
+                    <input type="text" x-model="$store.customer.booking.adventure.child_guide">
+                </div>
+                <hr>
+
+
+<!-- Rooms -->
+                <h5>Rooms</h5>
+
                 <div>
                     <p x-show="!showcontent">
                         You Have:
@@ -105,11 +167,64 @@
                     <select x-model="$store.customer.booking.rooms">
                         <option value="0">Select Room</option>
                         <option value="25000">Single Room</option>
-                        <option value="35000">Double Room</option>
+                        <option value="35000">Double Room</option> 
                         <option value="40000">Triple Room</option>
                     </select>
                 </div>
                 <br>
+
+                <div>
+                    <label>Promo Code:</label>
+                    <input type="text" x-model="$store.customer.booking.promo_code">
+                </div>
+                <hr>
+
+<!-- Table -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Room Cost</td>
+                            <td>
+                                LKR <span x-text="booking.room_cost * booking.number_of_rooms"></span>.00
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Adventure Cost</td>
+                            <td>
+                                LKR <span x-text="total_adventure_cost"></span>.00
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Total Cost</td>
+                            <td>
+                                LKR <span x-text="total.total_cost"></span>.00
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Total Discount</td>
+                            <td>
+                                LKR <span x-text="booking.total_discount"></span>.00
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Final Cost</td>
+                            <td>
+                                LKR <span x-text="booking.final_total"></span>.00
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
 
 
                 
