@@ -111,61 +111,181 @@ nav{
     color: var(--extra-light);
 }
 
-/* Style for the container */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Style for the heading */
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
+.logo {
+    font-family: cursive;
+}
+
+.container {
+    margin: auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.lead {
+    font-size: 18px;
+
+}
+
+.btn {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background: black;
+    padding: 13px 20px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.btn:hover {
+    background: gold;
     color: #333;
 }
 
-/* Style for form groups */
-.form-group {
-    margin-bottom: 20px;
-}
-
-/* Style for labels */
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #666;
-}
-
-/* Style for form inputs and select */
-input[type="text"],
-input[type="email"],
-input[type="date"],
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Style for the submit button */
-button[type="submit"] {
-    background-color: #3498db;
-    color: #fff;
+.about-btn {
+    padding-top: 40px;
+    display: inline-block;
+    font-size: 18px;
+    color: #333;
+    background: wheat;
+    padding: 13px 20px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-/* Hover effect for the submit button */
-button[type="submit"]:hover {
-    background-color: #2980b9;
+.about-btn:hover {
+    background: gold;
+    color: #333;
 }
+
+.footer {
+    background-color: goldenrod;
+    color: #fff;
+    padding: 20px;
+  }
+  
+
+  
+
+h3 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    padding-bottom: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p {
+    margin: 10px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img {
+    margin: 10px 0;
+    padding: 40px;
+    height: 450px;
+}
+
+
+#navbar {
+    display: flexbox;
+    background: goldenrod;
+    color: #fff;
+    overflow: auto;
+    
+}
+
+#navbar a {
+    color: #fff;
+}
+
+#navbar h1 {
+    float: left;
+    padding: 20px;
+}
+
+#navbar ul {
+    float: right;
+    list-style: none;
+}
+
+#navbar ul li{
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+#navbar ul li a:hover {
+    background-color: gold;
+    color: black;
+}
+
+/* New changes to add */
+.vid {
+   margin-top: 1px; 
+   margin-left: 40px;
+}
+
+#video {
+    display: inline;
+    z-index: -100;
+    margin-bottom: 1px;
+    
+}
+
+#royalty {
+    display: flexbox;
+    background: #f1f1f1;
+    opacity: 80%;
+    margin-top: 200px;
+
+}
+
+h1 {
+    align-items: center;
+}
+
+body {
+    background: url(pexels-asad-photo-maldives-1320684\ \(1\).jpg);
+}
+
+.form {
+    background: url(pexels-fwstudio-131683.jpg);
+
+}
+
+ul {
+    font-family:fantasy;
+    font-size: 20px;
+    
+}
+
+#tab {
+    color: #333;
+}
+
+
+
+
+
+
 
 .footer{
     background-color: var(--extra-light);
