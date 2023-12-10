@@ -35,6 +35,26 @@
 
                 <h1>BOOKING</h1>
 
+                <ul>
+                    <li x-on:click="tab = 1" id="tab">
+                        <a x-bind:class="tab == 1 ? 'active' : ''" aria-current="page" href="#">
+                            Booking
+                        </a>
+                    </li>
+                    <li x-bind:class="tab == 2 ? 'active' : ''" x-on:click="tab = 2" id="tab">
+                        <a class="nav-link" href="#">Checkout</a>
+                    </li>
+                    <li x-bind:class="tab == 3 ? 'active' : ''" x-on:click="tab = 3" id="tab">
+                        <a class="nav-link" href="#">Favorites</a>
+                    </li>
+                    <li x-bind:class="tab == 4 ? 'active' : ''" x-on:click="tab = 4" id="tab">
+                        <a class="nav-link" href="#">Past Bookings</a>
+                    </li>
+                    
+                </ul>
+                <div class="border border-1 p-4">
+                    <div x-show="tab === 1">
+
                 <h5>Customer Details</h5>
 
                 <div>
