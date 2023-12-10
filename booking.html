@@ -50,54 +50,59 @@
                     <label>Email:</label>
                     <input type="text" x-model="$store.customer.details.email">
                 </div>
-                <br>
+                <br>  
+
+
+<!-- Number of rooms -->
+                <div>
+                    <p x-show="!showcontent">
+                        You Have:
+                    </p>
+                    <p x-show="showcontent">
+                        You Have:<span x-text="loyalty_points"></span>loyalty_points
+                    </p>
+                    <button @click="showcontent = !showcontent">Check Loyalty Points</button>
+                </div>
 
                 <div>
                     <label>Check In:</label>
-                    <input type="date" x-model="$store.customer.details.check_in">
+                    <input type="date" x-model="$store.customer.booking.check_in">
                 </div>
                 <br>
                 <hr>
 
                 <div>
                     <label>Check Out:</label>
-                    <input type="date" x-model="$store.customer.details.check_out">
+                    <input type="date" x-model="$store.customer.booking.check_out">
                 </div>
                 <br>
 
-<!-- Number of rooms -->
                 <div>
                     <label>Number of rooms</label>
-                    <input type="text" x-model="$store.customer.reservations.number_of_rooms">
+                    <input type="number" x-model="$store.customer.booking.number_of_rooms">
                 </div>
                 <br>
 
                 <div>
                     <label>Number of Adults:</label>
-                    <input type="text" x-model="$store.customer.reservations.number_of_adults">
+                    <input type="number" x-model="$store.customer.booking.number_of_adults">
                 </div>
                 <br>
 
                 <div>
                     <label>Number of Children:</label>
-                    <input type="text" x-model="$store.customer.reservations.number_of_children">
+                    <input type="number" x-model="$store.customer.booking.number_of_children">
                 </div>
                 <br>
 
                 <div>
                     <label>Extra beds:</label>
-                    <input type="number" x-model="$store.customer.reservations.extra_bed">
+                    <input type="number" x-model="$store.customer.booking.extra_bed">
                 </div>
                 <br>
 
                 <div>
-                    <label>Email:</label>
-                    <input type="text" x-model="$store.customer.details.email">
-                </div>
-                <br>
-
-                <div>
-                    <select x-model="$store.customer.reservations.rooms">
+                    <select x-model="$store.customer.booking.rooms">
                         <option value="single">Single Room</option>
                         <option value="double">Double Room</option>
                         <option value="triple">Triple Room</option>
@@ -105,21 +110,8 @@
                 </div>
                 <br>
 
-<!-- Calculations of the bookings -->
-                <hr>
-                <label>Cost of a Single Room</label>
-                <span x-text="$store.customer.cost.NumberOfSingleRooms"></span>
-                <span x-text="$store.customer.cost.NumberOfSingleRooms * 25000"></span>
-                <br>
-                
-                <label>Cost of a Double Room</label>
-                <span x-text="$store.customer.cost.NumberOfDoubleRooms"></span>
-                <span x-text="$store.customer.cost.NumberOfDoubleRooms * 35000"></span>
-                <br>
 
-                <label>Cost of Triple Room</label>
-                <span x-text="$store.customer.cost.NumberOfTripleRooms"></span>
-                <span x-text="$store.customer.cost.NumberOfTripleRooms * 40 000"></span>
+                
 
 
 

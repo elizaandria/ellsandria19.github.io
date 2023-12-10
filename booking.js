@@ -4,8 +4,6 @@ document.addEventListener('alpine:init', () =>{
             title: '',
             name: '',
             email: '',
-            check_in: '',
-            check_out: '',
         },
 
         reservations: {
@@ -23,7 +21,27 @@ document.addEventListener('alpine:init', () =>{
             NumberOfTripleRooms: '',
         },
 
+        showcontent: false,
+        coupons:[
+            'Promo123',
+        ],
 
+        past_bookings:[],
+
+        favorites: [],
+
+        loyalty_points: 0,
+
+        booking:{
+            check_in: null,
+            check_out: null,
+            room_cost: 0,
+            number_of_rooms: 0,
+            number_of_adults: 0,
+            number_of_children: 0,
+            extra_bed: 0,
+            promo_code: null,
+        },
 
 
 
