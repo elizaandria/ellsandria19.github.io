@@ -29,6 +29,16 @@
             </div>
         </header>
 
+        <div>
+            <p x-show="!showcontent">
+                You Have:
+            </p>
+            <p x-show="showcontent">
+                You Have:<span x-text="loyalty_points"></span>loyalty_points
+            </p>
+            <button @click="showcontent = !showcontent">Check Loyalty Points</button>
+        </div>
+
 <!-- Customer Details -->
         <main x-data="customer">
             <form x-on:submit.prevent="$store.user.updateUser">
@@ -135,16 +145,6 @@
 
 <!-- Rooms -->
                 <h5>Rooms</h5>
-
-                <div>
-                    <p x-show="!showcontent">
-                        You Have:
-                    </p>
-                    <p x-show="showcontent">
-                        You Have:<span x-text="loyalty_points"></span>loyalty_points
-                    </p>
-                    <button @click="showcontent = !showcontent">Check Loyalty Points</button>
-                </div>
 
                 <div>
                     <label>Check In:</label>
