@@ -40,15 +40,26 @@ document.addEventListener('alpine:init', () =>{
                 'customerCost',
                 JSON.stringify(this.$store.customer.cost)
             );
+        },
 
 
 
 
-
-
-
-
+        init() {
+            this.details =
+                JSON.parse(localStorage.getItem('customerDetails')) || this.details;
+            this.reservations =
+                JSON.parse(localStorage.getItem('customerReservations')) || this.reservations;
+            this.cost =
+                JSON.parse(localStorage.getItem('customerCost')) || this.cost;
         }
+
+
+
+
+
+
+        
     });
 })
     
