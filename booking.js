@@ -11,7 +11,7 @@ document.addEventListener('alpine:init', () => {
 
         favorites: [],
 
-        loyality_points: 0,
+        loyalty_points: 0,
 
         tab: 1,
 
@@ -102,13 +102,13 @@ document.addEventListener('alpine:init', () => {
 
             this.tab = 4;
 
-            // if the booking has more than 3 rooms add 20 loyality points
+            // if the booking has more than 3 rooms add 20 loyalty points
             if (this.booking.number_of_rooms > 3) {
-                this.loyality_points += 20;
+                this.loyalty_points += 20;
             }
 
-            // save the loyality points to localstorage
-            localStorage.setItem('loyality_points', this.loyality_points);
+            // save the loyalty points to localstorage
+            localStorage.setItem('loyalty_points', this.loyalty_points);
 
             // add the booking to past bookings
             this.past_bookings.push(this.booking);
@@ -267,9 +267,9 @@ document.addEventListener('alpine:init', () => {
                 this.favorites = JSON.parse(localStorage.getItem('favorites'));
             }
 
-            // check if there are loyality_points in localstorage and load it
-            if (localStorage.getItem('loyality_points')) {
-                this.loyality_points = parseInt(localStorage.getItem('loyality_points'));
+            // check if there are loyalty_points in localstorage and load it
+            if (localStorage.getItem('loyalty_points')) {
+                this.loyalty_points = parseInt(localStorage.getItem('loyalty_points'));
             }
 
         }
