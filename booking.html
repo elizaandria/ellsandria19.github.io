@@ -13,7 +13,7 @@
         <nav>
             <div>FHR</div>
             <ul class="nav_links">
-                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a hmref="index.html">Home</a></li>
                 <li class="link"><a href="adventure.html">Adventures</a></li>
                 <li class="link"><a href="restaurants.html">Restaurants</a></li>
                 <li class="link"><a href="branches.html">Branches</a></li>
@@ -60,99 +60,170 @@
                 </div>
             </div>
         </div>
+        
 <div class="form">
             <div class="border border-1 p-4">
                 <div x-show="tab === 1">
+                    <!-- Customer Details -->
+        <main x-data="customer">
+                <form x-on:submit.prevent="$store.user.updateUser">
+    
+    
+                    <h1>BOOKING</h1>
+    
+    
+                    <h5>Customer Details</h5>
+    
+    
+                    <div>
+                        <select x-model="$store.customer.details.title">
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="Miss.">Miss.</option>
+                        </select>
+                    </div>
+                    <br>
+    
+    
+                    <div>
+                        <label>Name:</label>
+                        <input type="text" x-model="$store.customer.booking.details.name">
+                    </div>
+                    <br>
+    
+    
+                    <div>
+                        <label>Email:</label>
+                        <input type="text" x-model="$store.customer.booking.details.email">
+                    </div>
+                    <br> 
+    
+    
+                    <div>
+                        <label>Phone:</label>
+                        <input type="number" x-model="$store.customer.booking.details.phone">
+                    </div>
+                    <br> 
+    
+    
+                    <div>
+                        <label>Country:</label>
+                        <input type="text" x-model="$store.customer.booking.details.country">
+                    </div>
+                    <br> 
+    
+    
+                    <div>
+                        <label>Postal Code:</label>
+                        <input type="text" x-model="$store.customer.booking.details.postal_code">
+                    </div>
+                    <br> 
+                    <hr> 
+    
+    
+    
+    <!-- Adventures -->
+                    <h5>Adventures</h5>
+    
+    
+                    <div>
+                        <label>Number of Adults (Local):</label>
+                        <input type="text" x-model="$store.customer.booking.adventure.number_of_adults_local">
+                    </div>
+    
+    
+                    <div>
+                        <label>Number of Children(Local):<label>
+                        <input type="text" x-model="$store.customer.booking.adventure.number_of_children_local">
+                    </div>
+    
+    
+                    <div>
+                        <label>Number of Adults (Foreign):</label>
+                        <input type="text" x-model="$store.customer.booking.adventure.number_of_adults_foreign">
+                    </div>
+    
+    
+                    <div>
+                        <label>Number of Children(Foreign):<label>
+                        <input type="text" x-model="$store.customer.booking.adventure.number_of_children_foreign">
+                    </div>
+    
+    
+                    <div>
+                        <label>Adult Guide:<label>
+                        <input type="text" x-model="$store.customer.booking.adventure.adult_guide">
+                    </div>
+    
+    
+                    <div>
+                        <label>Child Guide:<label>
+                        <input type="text" x-model="$store.customer.booking.adventure.child_guide">
+                    </div>
+                    <hr>
+    
+    
+    
+    <!-- Rooms -->
+                    <h5>Rooms</h5>
+    
+    
+                    <div>
+                        <label>Check In:</label>
+                        <input type="date" x-model="$store.customer.booking.check_in">
+                    </div>
+                    <br>
+                    <hr>
+    
+    
+                    <div>
+                        <label>Check Out:</label>
+                        <input type="date" x-model="$store.customer.booking.check_out">
+                    </div>
+                    <br>
+    
+    
+                    <div>
+                        <label>Number of rooms</label>
+                        <input type="number" x-model="$store.customer.booking.number_of_rooms">
+                    </div>
+                    <br>
+    
+    
+                    <div>
+                        <label>Number of Adults:</label>
+                        <input type="number" x-model="$store.customer.booking.number_of_adults">
+                    </div>
+                    <br>
+    
+    
+                    <div>
+                        <label>Number of Children:</label>
+                        <input type="number" x-model="$store.customer.booking.number_of_children">
+                    </div>
+                    <br>
+    
+    
+                    <div>
+                        <label>Extra beds:</label>
+                        <input type="number" x-model="$store.customer.booking.extra_bed">
+                    </div>
+                    <br>
+    
+    
+                    <div>
+                        <select x-model="$store.customer.booking.rooms">
+                            <option value="0">Select Room</option>
+                            <option value="25000">Single Room</option>
+                            <option value="35000">Double Room</option> 
+                            <option value="40000">Triple Room</option>
+                        </select>
+                    </div>
+                    <br>
+                    
 
-                    <h5>
-                        Rooms
-                    </h5>
-
-                    <div class="row">
-                        <div class="form-floating mb-3 col-12">
-                            <select type="date" x-model="booking.room_cost" class="form-control" id="room">
-                                <option value="0">Select Room</option>
-                                <option value="25000">Single Room</option>
-                                <option value="35000">Double Room</option>
-                                <option value="40000">Triple Room</option>
-                            </select>
-                            <label for="room">Room</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input type="date" x-model="booking.checkin" class="form-control" id="check-in" />
-                            <label for="check-in">Check In Date</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input type="date" x-model="booking.checkout" class="form-control" id="check-out" />
-                            <label for="check-out">Check Out Date</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-floating mb-3 col-12">
-                            <input x-model="booking.number_of_rooms" type="number" class="form-control"
-                                id="number-of-rooms" min="0" />
-                            <label for="number-of-rooms">Number of Rooms</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input x-model="booking.number_of_adults" type="number" class="form-control"
-                                id="number-of-adults" />
-                            <label for="number-of-adults">Number of Adults</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input x-model="booking.number_of_children" type="number" class="form-control"
-                                id="number-of-children" />
-                            <label for="number-of-children">Number of Children</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input x-model="booking.extra_bed" type="number" class="form-control"
-                                id="number-of-children" />
-                            <label for="number-of-children">Extra Bed</label>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <h5>
-                        Adventures
-                    </h5>
-
-                    <div class="row">
-                        <div class="form-floating mb-3 col">
-                            <input x-model="booking.adventure.number_of_adults_local" type="number" class="form-control"
-                                id="number-of-adults-local" />
-                            <label for="number-of-adults-local">Number of Adults (Local)</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input x-model="booking.adventure.number_of_children_local" type="number"
-                                class="form-control" id="number-of-children-local" />
-                            <label for="number-of-children-local">Number of Children (Local)</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input x-model="booking.adventure.number_of_adults_foreign" type="number"
-                                class="form-control" id="number-of-adults-foreign" />
-                            <label for="number-of-adults-foreign">Number of Adults (Foreign)</label>
-                        </div>
-                        <div class="form-floating mb-3 col">
-                            <input x-model="booking.adventure.number_of_children_foreign" type="number"
-                                class="form-control" id="number-of-children-foreign" />
-                            <label for="number-of-children-foreign">Number of Children (Foreign)</label>
-                        </div>
-
-                        <div class="col-12 row">
-                            <div class="form-floating mb-3 col">
-                                <input x-model="booking.adventure.adult_guide" type="number" class="form-control"
-                                    id="adult-guide" />
-                                <label for="adult-guide">Adult Guide</label>
-                            </div>
-                            <div class="form-floating mb-3 col">
-                                <input x-model="booking.adventure.child_guide" type="number" class="form-control"
-                                    id="child-guide" />
-                                <label for="child-guide">Child Guide</label>
-                            </div>
-                        </div>
-
-
+                    
+                    
                     </div>
 
                     <hr>
