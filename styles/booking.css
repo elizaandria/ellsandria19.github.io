@@ -111,6 +111,54 @@ nav{
     color: var(--extra-light);
 }
 
+h1, h2, h3 {
+    padding-bottom: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#navbar {
+    display: flexbox;
+    background: goldenrod;
+    color: #fff;
+    overflow: auto;
+    
+}
+
+#navbar a {
+    color: #fff;
+}
+
+#navbar h1 {
+    float: left;
+    padding: 20px;
+}
+
+#navbar ul {
+    float: right;
+    list-style: none;
+}
+
+#navbar ul li{
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+#navbar ul li a:hover {
+    background-color: gold;
+    color: black;
+}
+
+#tab {
+    color: #333;
+}
+
+
+
 
 
 
