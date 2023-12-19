@@ -1,326 +1,700 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-        <link rel="stylesheet" href="styles/booking.css">
-        <script src="//unpkg.com/alpinejs" defer></script>
-        <link rel="manifest" href="favicon_io/site.webmanifest">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="booking.js"></script>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+            <link rel="stylesheet" href="styles/style.css">
+            <link rel="manifest" href="favicon_io/site.webmanifest">
+            <script src="booking.js"></script>
+            <link rel="stylesheet" href="/styles/booking.css">
+            <script src="https://kit.fontawesome.com/b3297fb63a.js" crossorigin="anonymous"></script>
+            <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
+            <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
 
-        <title>Forest Hotel | Resort</title> 
-    </head>
-    <body>
-        <nav>
-            <div>FHR</div>
-            <ul class="nav_links">
-                <li class="link"><a href="index.html">Home</a></li>
-                <li class="link"><a href="adventure.html">Adventures</a></li>
-                <li class="link"><a href="restaurants.html">Restaurants</a></li>
-                <li class="link"><a href="branches.html">Branches</a></li>
-                <li class="link"><a href="booking.html">Bookings</a></li>
-            </ul>
-        </nav>
-        <header class="section_container header_container">
-            <div class="header_image_container">
-                <div class="header_content">
-                    <h1>Bookings</h1>
-                    <p>Enjoy and Relax for as Long as you Like</p>
+            <script src="//unpkg.com/alpinejs" defer></script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <script src="https://cdn.tailwindcss.com"></script>
+            <title>Forest Hotel | Resort</title> 
+        </head>
+        <body class="font-sans bg-green-800 text-gray-800">
+            <nav>
+                <div>FHR</div>
+                <ul class="nav_links">
+                    <li class="link"><a href="index.html">Home</a></li>
+                    <li class="link"><a href="adventure.html">Adventures</a></li>
+                    <li class="link"><a href="restaurants.html">Restaurants</a></li>
+                    <li class="link"><a href="branches.html">Branches</a></li>
+                    <li class="link"><a href="booking.html">Bookings</a></li>
+                </ul>
+            </nav>
+            <header class="section_container header_container">
+                <div class="header_image_container">
+                    <div class="header_content">
+                        <h1>Best Vacation Spot</h1>
+                        <p>Enjoy and Relax for as Long as you Like</p>
+                    </div>
+                    <div class="booking_container">
+                        <form>
+                            <div class="form_group">
+                                <div class="input_group">
+                                    <input type="text">
+                                    <label>Location</label>
+                                </div>
+                                <p>Where are you going?</p>
+                            </div>
+    
+                            <div class="form_group">
+                                <div class="input_group">
+                                    <input type="text">
+                                    <label>Check In</label>
+                                </div>
+                                <p>Add date</p>
+                            </div>
+    
+                            <div class="form_group">
+                                <div class="input_group">
+                                    <input type="text">
+                                    <label>Check out</label>
+                                </div>
+                                <p>Add date</p>
+                            </div>
+    
+                            <div class="form_group">
+                                <div class="input_group">
+                                    <input type="text">
+                                    <label>Guests</label>
+                                </div>
+                                <p>Add guests</p>
+                            </div>
+                        </form>
+                        <button class="btn"><a href="booking.html"></a><i class="ri-search-line"></i></button>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
+  </div>
+
+  <div id="_app" x-data="_app"
+  class="fullbody bg-gray-100 p-6 md:p-10 lg:p-16 xl:p-20 text-sm md:text-base lg:text-lg xl:text-xl"
+  >
+
+    <div class="mt-8 mb-8">
+      <div class="p-100 mb-4 bg-body-tertiary rounded-3" x-data="{ showLoyaltyPoints: false, loyalty_points: 0 }"
+        style=" background-size: cover; background-position: center;">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold text-back">Welcome to Forest  Hotel</h1>
+          <p class="col-md-8 fs-4 text-black mb-10">
+            Enjoy your stay!!!
+          </p>
+          <button @click="showLoyaltyPoints = !showLoyaltyPoints"
+            class="bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 px-4 rounded">
+            Loyalty Points
+          </button>
+
+          <p class="text-black mt-10 mb-8 text-2xl" x-show="showLoyaltyPoints">
+            You have <span x-text="loyality_points"></span> loyalty points
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="vid">
-       <h1> BOOKING </h1>
-       </div>
-   </div>
-<div class="mt-4" id="royalty">
-<div class="p-5 mb-4 bg-body-tertiary rounded-3">
-   
-   <div class="container-fluid py-5" >
-       <div>         
-       <p x-show="!showcontent">
-           You have:
-       </p>
-       <p x-show="showcontent">
-           You have: <span x-text="loyalty_points"></span> loyalty points
-       </p>
-       <button @click="showcontent = !showcontent">Check Loyalty Points</button>
-       </div>
-   </div>
-</div>
-</div>
-<div class="form">
-<div class="border border-1 p-4">
-   <div x-show="tab === 1">
-
-       <h5>
-           Rooms
-       </h5>
-
-       <div class="row">
-           <div class="form-floating mb-3 col-12">
-               <select type="date" x-model="booking.room_cost" class="form-control" id="room">
-                   <option value="0">Select Room</option>
-                   <option value="25000">Single Room</option>
-                   <option value="35000">Double Room</option>
-                   <option value="40000">Triple Room</option>
-               </select>
-               <label for="room">Room</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input type="date" x-model="booking.checkin" class="form-control" id="check-in" />
-               <label for="check-in">Check In Date</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input type="date" x-model="booking.checkout" class="form-control" id="check-out" />
-               <label for="check-out">Check Out Date</label>
-           </div>
-       </div>
-
-       <div class="row">
-           <div class="form-floating mb-3 col-12">
-               <input x-model="booking.number_of_rooms" type="number" class="form-control"
-                   id="number-of-rooms" min="0" />
-               <label for="number-of-rooms">Number of Rooms</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.number_of_adults" type="number" class="form-control"
-                   id="number-of-adults" />
-               <label for="number-of-adults">Number of Adults</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.number_of_children" type="number" class="form-control"
-                   id="number-of-children" />
-               <label for="number-of-children">Number of Children</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.extra_bed" type="number" class="form-control"
-                   id="number-of-children" />
-               <label for="number-of-children">Extra Bed</label>
-           </div>
-       </div>
-
-       <hr>
-
-       <h5>
-           Adventures
-       </h5>
-
-       <div class="row">
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.adventure.number_of_adults_local" type="number" class="form-control"
-                   id="number-of-adults-local" />
-               <label for="number-of-adults-local">Number of Adults (Local)</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.adventure.number_of_children_local" type="number"
-                   class="form-control" id="number-of-children-local" />
-               <label for="number-of-children-local">Number of Children (Local)</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.adventure.number_of_adults_foreign" type="number"
-                   class="form-control" id="number-of-adults-foreign" />
-               <label for="number-of-adults-foreign">Number of Adults (Foreign)</label>
-           </div>
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.adventure.number_of_children_foreign" type="number"
-                   class="form-control" id="number-of-children-foreign" />
-               <label for="number-of-children-foreign">Number of Children (Foreign)</label>
-           </div>
-
-           <div class="col-12 row">
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.adventure.adult_guide" type="number" class="form-control"
-                       id="adult-guide" />
-                   <label for="adult-guide">Adult Guide</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.adventure.child_guide" type="number" class="form-control"
-                       id="child-guide" />
-                   <label for="child-guide">Child Guide</label>
-               </div>
-           </div>
 
 
-       </div>
 
-       <hr>
+    <style>
+        .bigtab {
+          font-size: 18px;
+          font-weight: bold;
+          color: #333;
+          text-decoration: none;
+          transition: all 0.3s ease-in-out;
+        }
+      
+        .bigtab:hover {
+          border-color: #ff6600;
+          color: #ff6600;
+        }
+      
+        .bigtab.active {
+          border-color: #ff6600;
+          color: #ff6600;
+        }
+      </style>
+      
+      <ul class="flex border-b border-black-300">
+        <li class="mr-2" x-on:click="tab = 1">
+          <a class="bigtab py-2 px-4 block border-b-2 border-transparent hover:border-blue-500 focus:outline-none {{ tab === 1 ? 'border-blue-500 active' : '' }}"
+            href="#">
+            🌟 Booking
+          </a>
+        </li>
+        <li class="mr-2" x-on:click="tab = 2">
+          <a class="bigtab py-2 px-4 block border-b-2 border-transparent hover:border-blue-500 focus:outline-none {{ tab === 2 ? 'border-blue-500 active' : '' }}"
+            href="#">
+            🚀 Adventure
+          </a>
+        </li>
+        <li class="mr-2" x-on:click="tab = 3">
+          <a class="bigtab py-2 px-4 block border-b-2 border-transparent hover:border-blue-500 focus:outline-none {{ tab === 3 ? 'border-blue-500 active' : '' }}"
+            href="#">
+            🛒 Checkout
+          </a>
+        </li>
+        <li class="mr-2" x-on:click="tab = 4">
+          <a class="bigtab py-2 px-4 block border-b-2 border-transparent hover:border-blue-500 focus:outline-none {{ tab === 4 ? 'border-blue-500 active' : '' }}"
+            href="#">
+            ❤️ Favorites
+          </a>
+        </li>
+        <li x-on:click="tab = 5">
+          <a class="bigtab py-2 px-4 block border-b-2 border-transparent hover:border-blue-500 focus:outline-none {{ tab === 5 ? 'border-blue-500 active' : '' }}"
+            href="#">
+            📚 Past Bookings
+          </a>
+        </li>
+      </ul>
+      
+    <div class="border border-gray-300 p-4">
+      <div x-show="tab === 1">
 
-       <h5>
-           Bill
-       </h5>
-
-       <div>
-           <div class="form-floating mb-3 col">
-               <input x-model="booking.promo_code" type="text" class="form-control" id="promo_code" />
-               <label for="promo_code">Promo Code</label>
-           </div>
+        <form x-on:submit.prevent="goToAdventures">
+          <h5>
+            Select Room
+          </h5>
 
 
-           <table class="table table-bordered">
-               <thead>
-                   <tr>
-                       <th scope="col">Description</th>
-                       <th scope="col">Cost</th>
-                   </tr>
-               </thead>
-               <tbody>
-                   <tr>
-                       <td>Room Cost</td>
-                       <td>
-                           LKR <span x-text="booking.room_cost * booking.number_of_rooms"></span>.00
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>Adventure Cost</td>
-                       <td>
-                           LKR <span x-text="total_adventure_cost"></span>.00
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>Total Cost</td>
-                       <td>
-                           LKR <span x-text="total_cost"></span>.00
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>Total Discount</td>
-                       <td>
-                           LKR <span x-text="booking.total_discount"></span>.00
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>Final Total</td>
-                       <td>
-                           LKR <span x-text="booking.final_total"></span>.00
-                       </td>
-                   </tr>
-               </tbody>
-           </table>
 
-           <button x-on:click="goToCheckout" class="btn btn-success">
-               Checkout
-           </button>
-       </div>
-   </div>
-
-   <div x-show="tab === 2">
-
-       <h5>
-           Checkout
-       </h5>
-       <form x-on:submit.prevent="completeBooking">
-           <div class="row">
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.name" type="text" class="form-control" id="name" required />
-                   <label for="name">Name</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.email" type="text" class="form-control" id="email" />
-                   <label for="email">Email</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.phone" type="text" class="form-control" id="phone" />
-                   <label for="phone">Phone</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.address" type="text" class="form-control" id="address" />
-                   <label for="address">Address</label>
-               </div>
-           </div>
-
-           <div class="row">
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.city" type="text" class="form-control" id="city" />
-                   <label for="city">City</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.country" type="text" class="form-control" id="country" />
-                   <label for="country">Country</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.postal_code" type="text" class="form-control"
-                       id="postal-code" />
-                   <label for="postal-code">Postal Code</label>
-               </div>
-           </div>
-
-           <div class="row">
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.card_number" x-mask="4999-9999-9999-9999" type="text"
-                       class="form-control" id="card-number" />
-                   <label for="card-number">Card Number</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-model="booking.card_holder" type="text" class="form-control"
-                       id="card-holder" />
-                   <label for="card-holder">Card Holder</label>
-               </div>
-               <div class="form-floating mb-3 col">
-                   <input x-mask="99/99" x-model="booking.expiry_date" type="text" class="form-control"
-                       id="expiry-date" />
-                   <label for="expiry-date">Expiry Date</label>
-               </div>
-           </div>
-
-           <button class="btn btn-success" type="submit">
-               Confirm Booking
-           </button>
-
-           <button type="button" class="btn btn-primary" x-on:click="addToFavorites">
-               Add To Favorites
-           </button>
-       </form>
-   </div>
-   
-   </div>
-</div>
-</div>
-
-        <footer class="footer">
-            <div class="section_container footer_container">
-                <div class="footer_col">
-                    <h4>FHR</h4>
-                    <p>
-                        FHR is a luxury facility that is intended primarily for vacationers and is usually located near 
-                        special attractions, such as beaches and seashores, scenic or historic areas, ski parks, or spas.
-                    </p>
-                    <p>
-                        You can enjoy all the facilities we provide. We have packages that you would love to try.
-                        Nature is where you can sit quietly and listen to all the secrets it has to tell us. 
-                    </p>
-                </div>
-                <div class="footer_col">
-                    <h4>Investors</h4>
-                    <p>Careers</p>
-                    <p>Global Citizenship</p>
-                    <p>News</p>
-                </div>
-
-                <div class="footer_col">
-                    <h4>Links</h4>
-                    <p>Company History</p>
-                    <p>About Us</p>
-                    <p>Contact Us</p>
-                    <p>Services</p>
-                    <p>Privacy Policy</p>
-                </div>
-
-                <div class="footer_col">
-                    <h4>Resources</h4>
-                    <p>Social Medis</p>
-                    <p>Help Center</p>
-                    <p>Email</p>
-                </div>
+          <div class="d-grid">
+            <div class="col">
+              <label for="room" class="form-label">Room</label>
+              <div class="form-floating mb-3">
+                <select type="date" x-model="booking.room_cost"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="room">
+                  <option value="" selected>Select Room</option>
+                  <option value="25000">Single Rooms</option>
+                  <option value="35000">Double Guest Rooms</option>
+                  <option value="40000">Triple Cottage Rooms</option>
+                </select>
+              </div>
             </div>
-            <div class="footer_bar">
-                Copyright @ 2023 by Forest Hotel | Resort. All rights reserved.
+            <div class="col">
+              <label for="check-in" class="form-label">Check In Date</label>
+              <div class="form-floating mb-3">
+                <input type="date" x-model="booking.checkin"
+                  class="form-control  border-gray-400 border-2 rounded-lg text-lg p-2" id="check-in" required />
+              </div>
             </div>
-        </footer>
-    </body>
+            <div class="col">
+              <label for="check-out" class="form-label">Check Out Date</label>
+              <div class="form-floating mb-3">
+                <input type="date" x-model="booking.checkout"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="check-out" required />
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="d-grid">
+            <div class="col">
+              <label for="number-of-rooms" class="form-label">Number of Rooms</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.number_of_rooms" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="number-of-rooms" min="0"
+                  max="100" required />
+              </div>
+            </div>
+            <div class="col">
+              <label for="number-of-adults" class="form-label">Number of Adults</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.number_of_adults" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="number-of-adults" min="0"
+                  max="100" required />
+              </div>
+            </div>
+            <div class="col">
+              <label for="number-of-children" class="form-label">Number of Children</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.number_of_children" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="number-of-children" min="0"
+                  max="100" />
+              </div>
+            </div>
+            <div class="col">
+              <label for="extra-bed" class="form-label">Extra Bed</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.extra_bed" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="extra-bed" min="0" max="5" />
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <hr>
+
+          <h5 class="sumarry text-2xl">
+            Summary
+          </h5>
+
+          <div>
+            <div class="flex items-center">
+              <label for="promo_code" class="w-1/5">Promo Code</label>
+              <div class="flex-1 form-floating mb-3">
+                <input x-model="booking.promo_code" type="text"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="promo_code" />
+              </div>
+            </div>
+
+
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Description</th>
+                  <th scope="col">Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Room Cost</td>
+                  <td>
+                    LKR <span x-text="booking.room_cost * booking.number_of_rooms"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Adventure Cost</td>
+                  <td>
+                    LKR <span x-text="total_adventure_cost"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total Cost</td>
+                  <td>
+                    LKR <span x-text="total_cost"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total Discount</td>
+                  <td>
+                    LKR <span x-text="booking.total_discount"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Final Total</td>
+                  <td>
+                    LKR <span x-text="booking.final_total"></span>.00
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg">
+              Next
+            </button>
+
+          </div>
+        </form>
+      </div>
+
+      <div x-show="tab === 2" x-init="init">
+
+        <form x-on:submit.prevent="goToCheckout">
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Left column -->
+            <div class="col-span-1">
+              <label for="number-of-adults-local" class="form-label">Number of Adults (Local)</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.adventure.number_of_adults_local" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="number-of-adults-local"
+                  min="0" max="100" />
+              </div>
+      
+              <label for="number-of-children-local" class="form-label">Number of Children (Local)</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.adventure.number_of_children_local" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="number-of-children-local"
+                  min="0" max="100" />
+              </div>
+      
+              <label for="number-of-adults-foreign" class="form-label">Number of Adults (Foreign)</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.adventure.number_of_adults_foreign" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="number-of-adults-foreign"
+                  min="0" max="100" />
+              </div>
+      
+              <label for="number-of-children-foreign" class="form-label">Number of Children (Foreign)</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.adventure.number_of_children_foreign" type="number"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="number-of-children-foreign"
+                  min="0" max="100" />
+              </div>
+            </div>
+      
+            <!-- Right column -->
+            <div class="col-span-1">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="col">
+                  <label for="adult-guide" class="form-label">Adult Guide</label>
+                  <div class="form-floating mb-3">
+                    <input x-model="booking.adventure.adult_guide" type="number"
+                      class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="adult-guide" min="0"
+                      max="100" />
+                  </div>
+                </div>
+                <div class="col">
+                  <label for="child-guide" class="form-label">Child Guide</label>
+                  <div class="form-floating mb-3">
+                    <input x-model="booking.adventure.child_guide" type="number"
+                      class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="child-guide" min="0"
+                      max="100" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <hr>
+      
+          <h5 class="summary text-2xl">
+            Summary
+          </h5>
+      
+          <div>
+            <div class="flex items-center">
+              <label for="promo_code" class="w-1/5">Promo Code</label>
+              <div class="flex-1 form-floating mb-3">
+                <input x-model="booking.promo_code" type="text"
+                  class="form-control border-gray-400 border-2 rounded-lg text-lg p-2" id="promo_code" />
+              </div>
+            </div>
+      
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Description</th>
+                  <th scope="col">Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Room Cost</td>
+                  <td>
+                    LKR <span x-text="booking.room_cost * booking.number_of_rooms"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Adventure Cost</td>
+                  <td>
+                    LKR <span x-text="total_adventure_cost"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total Cost</td>
+                  <td>
+                    LKR <span x-text="total_cost"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total Discount</td>
+                  <td>
+                    LKR <span x-text="booking.total_discount"></span>.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Final Total</td>
+                  <td>
+                    LKR <span x-text="booking.final_total"></span>.00
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+      
+            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg">
+              Checkout
+            </button>
+          </div>
+        </form>
+      </div>
+      
+      <div x-show="tab === 3" class="bg-gray-200 p-8 rounded-lg">
+
+        <h2 class="text-3xl font-bold text-blue-500 mb-4">
+          Order Summary
+        </h2>
+      
+        <table class="table table-bordered bg-white rounded-lg mb-6">
+          <thead class="bg-blue-500 text-white">
+            <tr>
+              <th scope="col">Description</th>
+              <th scope="col">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Room Cost</td>
+              <td class="text-green-500">
+                LKR <span x-text="booking.room_cost * booking.number_of_rooms"></span>.00
+              </td>
+            </tr>
+            <tr>
+              <td>Adventure Cost</td>
+              <td class="text-green-500">
+                LKR <span x-text="total_adventure_cost"></span>.00
+              </td>
+            </tr>
+            <tr>
+              <td>Total Cost</td>
+              <td class="text-green-500">
+                LKR <span x-text="total_cost"></span>.00
+              </td>
+            </tr>
+            <tr>
+              <td>Total Discount</td>
+              <td class="text-green-500">
+                LKR <span x-text="booking.total_discount"></span>.00
+              </td>
+            </tr>
+            <tr>
+              <td>Final Total</td>
+              <td class="text-green-500">
+                LKR <span x-text="booking.final_total"></span>.00
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <hr class="my-8">
+      
+        <h2 class="text-3xl font-bold text-blue-500 mb-4">
+          Checkout
+        </h2>
+      
+        <form x-on:submit.prevent="completeBooking">
+      
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="col">
+              <label for="name" class="form-label text-gray-600">Name</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.name" type="text" class="form-control rounded-lg" id="name" required />
+              </div>
+            </div>
+            <div class="col">
+              <label for="email" class="form-label text-gray-600">Email</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.email" type="text" class="form-control rounded-lg" id="email" required />
+              </div>
+            </div>
+            <div class="col">
+              <label for="phone" class="form-label text-gray-600">Phone</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.phone" type="text" class="form-control rounded-lg" id="phone" required />
+              </div>
+            </div>
+            <div class="col">
+              <label for="address" class="form-label text-gray-600">Address</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.address" type="text" class="form-control rounded-lg" id="address" required />
+              </div>
+            </div>
+          </div>
+      
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="col">
+              <label for="city" class="form-label text-gray-600">City</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.city" type="text" class="form-control rounded-lg" id="city" required />
+              </div>
+            </div>
+            <div class="col">
+              <label for="country" class="form-label text-gray-600">Country</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.country" type="text" class="form-control rounded-lg" id="country" required />
+              </div>
+            </div>
+            <div class="col">
+              <label for="postal-code" class="form-label text-gray-600">Postal Code</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.postal_code" type="text" class="form-control rounded-lg" id="postal-code" required />
+              </div>
+            </div>
+          </div>
+      
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="col">
+              <label for="card-number" class="form-label text-gray-600">Card Number</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.card_number" x-mask="4999-9999-9999-9999" type="text"
+                  class="form-control rounded-lg" id="card-number" />
+              </div>
+            </div>
+            <div class="col">
+              <label for="card-holder" class="form-label text-gray-600">Card Holder</label>
+              <div class="form-floating mb-3">
+                <input x-model="booking.card_holder" type="text" class="form-control rounded-lg" id="card-holder" />
+              </div>
+            </div>
+            <div class="col">
+              <label for="expiry-date" class="form-label text-gray-600">Expiry Date</label>
+              <div class="form-floating mb-3">
+                <input x-mask="99/99" x-model="booking.expiry_date" type="text" class="form-control rounded-lg"
+                  id="expiry-date" />
+              </div>
+            </div>
+          </div>
+      
+          <div class="flex justify-between">
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg" type="submit">
+              Confirm Booking
+            </button>
+      
+            <button type="button" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg"
+              x-on:click="addToFavorites">
+              Add To Favorites
+            </button>
+          </div>
+      
+        </form>
+      
+      </div>
+      
+
+      <div x-show="tab === 4">
+        <h5>
+          Favorites
+        </h5>
+
+        <div class="table-responsive">
+          <table class="table table-bordered w-full">
+            <thead class="bg-gray-200">
+              <tr>
+                <th scope="col" class="px-4 py-2">Check In</th>
+                <th scope="col" class="px-4 py-2">Check Out</th>
+                <th scope="col" class="px-4 py-2">Room Cost</th>
+                <th scope="col" class="px-4 py-2">Number of Rooms</th>
+                <th scope="col" class="px-4 py-2">Number of Adults</th>
+                <th scope="col" class="px-4 py-2">Number of Children</th>
+                <th scope="col" class="px-4 py-2">Extra Bed</th>
+                <th scope="col" class="px-4 py-2">Promo Code</th>
+                <th scope="col" class="px-4 py-2">Total Cost</th>
+                <th scope="col" class="px-4 py-2">Discount Percentage</th>
+                <th scope="col" class="px-4 py-2">Total Discount</th>
+                <th scope="col" class="px-4 py-2">Final Total</th>
+                <th scope="col" class="px-4 py-2">Total Adventure Cost</th>
+                <th scope="col" class="px-4 py-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="(booking, index) in favorites" :key="index">
+                <tr class="border-b">
+                  <td class="px-4 py-2" x-text="booking.checkin"></td>
+                  <td class="px-4 py-2" x-text="booking.checkout"></td>
+                  <td class="px-4 py-2" x-text="booking.room_cost"></td>
+                  <td class="px-4 py-2" x-text="booking.number_of_rooms"></td>
+                  <td class="px-4 py-2" x-text="booking.number_of_adults"></td>
+                  <td class="px-4 py-2" x-text="booking.number_of_children"></td>
+                  <td class="px-4 py-2" x-text="booking.extra_bed"></td>
+                  <td class="px-4 py-2" x-text="booking.promo_code"></td>
+                  <td class="px-4 py-2" x-text="booking.total_cost"></td>
+                  <td class="px-4 py-2" x-text="booking.discount_percentage"></td>
+                  <td class="px-4 py-2" x-text="booking.total_discount"></td>
+                  <td class="px-4 py-2" x-text="booking.final_total"></td>
+                  <td class="px-4 py-2" x-text="booking.final_adventure_cost"></td>
+                  <td class="px-4 py-2">
+                    <button class="btn btn-primary" x-on:click="bookFavorite(index)">
+                      Book Now
+                    </button>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+
+
+
+      </div>
+
+      <div x-show="tab === 5">
+        <h5>
+          Past Bookings
+        </h5>
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Check In</th>
+                <th scope="col">Check Out</th>
+                <th scope="col">Room Cost</th>
+                <th scope="col">Number of Rooms</th>
+                <th scope="col">Number of Adults</th>
+                <th scope="col">Number of Children</th>
+                <th scope="col">Extra Bed</th>
+                <th scope="col">Promo Code</th>
+                <th scope="col">Total Cost</th>
+                <th scope="col">Discount Percentage</th>
+                <th scope="col">Total Discount</th>
+                <th scope="col">Final Total</th>
+                <th scope="col">Total Adventure Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="booking in past_bookings" :key="booking">
+                <tr>
+                  <td x-text="booking.checkin"></td>
+                  <td x-text="booking.checkout"></td>
+                  <td x-text="booking.room_cost"></td>
+                  <td x-text="booking.number_of_rooms"></td>
+                  <td x-text="booking.number_of_adults"></td>
+                  <td x-text="booking.number_of_children"></td>
+                  <td x-text="booking.extra_bed"></td>
+                  <td x-text="booking.promo_code"></td>
+                  <td x-text="booking.total_cost"></td>
+                  <td x-text="booking.discount_percentage"></td>
+                  <td x-text="booking.total_discount"></td>
+                  <td x-text="booking.final_total"></td>
+                  <td x-text="booking.final_adventure_cost"></td>
+                </tr>
+              </template>
+            </tbody>
+        </div>
+      </div>
+    </div>
+
+    <div x-show="confirmAlert"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 transform scale-95"
+    x-transition:enter-end="opacity-100 transform scale-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 transform scale-100"
+    x-transition:leave-end="opacity-0 transform scale-95"
+    class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
+  <div class="bg-white rounded-lg p-6 shadow-md max-w-md">
+    <div class="text-2xl font-semibold text-blue-500 mb-4">Booking Confirmed!</div>
+    <p class="text-gray-700 mb-4">Your booking has been confirmed. Thank you for choosing our services.</p>
+    <button class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
+      x-on:click="confirmAlert = false;">
+      Close
+    </button>
+  </div>
+</div>
+
+  </div>
+
+
+
+  </div>
+</body>
+
+
+<script src="js/global.js"></script>
+
+
+
+
+
 </html>

@@ -257,23 +257,13 @@ document.addEventListener('alpine:init', () => {
             });
 
             // watch tab for changes and do something
-            this.$watch('tab', (value) => {
-               console.log(value);
-
-               // if the value is 2 check if there is an active booking by checking for number_of_rooms
-               if(value == 2 && this.booking.number_of_rooms == 0 ){
-                alert('Please select a room first and then proceed to adventures');
-                     this.tab = 1;
-
-               }
-
-            });
+           
 
             this.$watch('tab', (value) => {
                 console.log(value);
  
                 // if the value is 2 check if there is an active booking by checking for number_of_rooms
-                if(value == 3 && this.booking.number_of_rooms == 0 ){
+                if(""){
                  alert('Please select a room first and then proceed to checkout');
                       this.tab = 1;
  
