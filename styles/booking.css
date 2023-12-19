@@ -64,12 +64,12 @@ nav{
     display: flex;
     align-items: center;
     gap: 2rem;
-    color: white;
+    color: rgb(148, 18, 18);
 }
 
 .link a{
     font-weight: 500;
-    color: white;
+    color: rgb(0, 0, 0);
     transition: 0.3s;
 }
 
